@@ -1,0 +1,25 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="CustomTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<div class="page">
+    <TopNavbar />
+    <main>
+        @Body
+    </main>
+</div>
+
+@code {
+    MudTheme CustomTheme = new MudTheme()
+        {
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "Public Sans", "Roboto", "Verdana", "sans-serif" }
+                }
+            }
+        };
+}

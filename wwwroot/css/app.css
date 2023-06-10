@@ -5,11 +5,20 @@
 
 div.blue-stripe {
     background: linear-gradient(82deg, #594ae2 0%, #7467ef 100%);
-    /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 45.5%, 0 100%); */
-    clip-path: polygon(0 65%, 1920px 0, 1920px 35%, 0 100%);
-    height: 550px;
+    transform: skewY(348deg);
+    height: 200px;
     width: 100%;
-    margin-top: -80px;
+    margin-top: 120px;
+    margin-bottom: 210px;
+}
+
+div.indigo-stripe {
+    background-color: #110e2d;
+    transform: skewY(348deg);
+    height: 1100px;
+    width: 100%;
+    margin-top: 180px;
+    margin-bottom: 210px;
 }
 
 html,

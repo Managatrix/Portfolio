@@ -13,7 +13,7 @@
                 </MudSelect>
                 @foreach (string description in @selectedProject.DescriptionParagraphs)
                 {
-                    <MudText>@description</MudText>
+                    <MudText Typo="Typo.subtitle1">@description</MudText>
                 }
             </MudStack>
             <MudStack AlignItems="AlignItems.Center" class="mt-16">
@@ -25,8 +25,7 @@
                 </MudStack>
             </MudStack>
         </MudPaper>
-        <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="" Width="350"
-            Height="600" />
+        <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg" Width="350" Height="600" />
     </MudStack>
 </MudContainer>
 

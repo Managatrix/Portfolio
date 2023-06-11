@@ -17,8 +17,8 @@ div.indigo-stripe {
     transform: skewY(348deg);
     height: 1100px;
     width: 100%;
-    margin-top: 180px;
-    margin-bottom: 210px;
+    margin-top: 200px;
+    /* margin-bottom: 210px; */
 }
 
 html,

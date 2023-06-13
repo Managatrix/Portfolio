@@ -3,7 +3,7 @@
 <MudContainer id="contact" MaxWidth="MaxWidth.Medium">
     <MudStack>
         <MudText Typo="Typo.h4">Contact</MudText>
-        <MudForm @ref="form" @bind-IsValid="@success">
+        <MudForm @bind-IsValid="@success">
             <MudStack>
                 <MudTextField T="string" Label="Your e-mail address" @bind-Value="@senderFormData.EmailAddress" Required="true"
                     RequiredError="Email is required!" Variant="Variant.Outlined" Clearable="true"
@@ -23,7 +23,6 @@
 
 @code {
     bool success;
-    MudForm form;
     FormData senderFormData = new FormData();
     private void sendEmail()
     {

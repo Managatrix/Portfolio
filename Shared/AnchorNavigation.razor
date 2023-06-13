@@ -1,3 +1,5 @@
+@* Source:  https://www.meziantou.net/anchor-navigation-in-a-blazor-application.htm *@
+
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JsRuntime
 @implements IDisposable
@@ -5,11 +7,6 @@
     protected override void OnInitialized()
     {
         NavigationManager.LocationChanged += OnLocationChanged;
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        await ScrollToFragment();
     }
 
     public void Dispose()

@@ -5,9 +5,9 @@
         <MudText Typo="Typo.h4">Contact</MudText>
         <MudForm @bind-IsValid="@success">
             <MudStack>
-                <MudTextField T="string" Label="Your e-mail address" @bind-Value="@senderFormData.EmailAddress" Required="true"
+                @* <MudTextField T="string" Label="Your e-mail address" @bind-Value="@senderFormData.EmailAddress" Required="true"
                     RequiredError="Email is required!" Variant="Variant.Outlined" Clearable="true"
-                    Validation="@(new EmailAddressAttribute() {ErrorMessage = "The e-mail address is invalid."})" />
+                    Validation="@(new EmailAddressAttribute() {ErrorMessage = "The e-mail address is invalid."})" /> *@
                 <MudTextField T="string" Label="Subject" @bind-Value="@senderFormData.Subject" Required="true" RequiredError="Subject is required!"
                     Variant="Variant.Outlined" Immediate="true" Clearable="true" />
                 <MudTextField T="string" Label="Message" Lines="10" @bind-Value="@senderFormData.Body" Required="true" RequiredError="Message is required!"
@@ -27,7 +27,7 @@
     private void sendEmail()
     {
         JsRuntime.InvokeAsync<object>("blazorExtensions.sendEmail",
-            new object[] { senderFormData.EmailAddress, senderFormData.Subject, senderFormData.Body });
+            new object[] { "mana.tomfd@gmail.com", senderFormData.Subject, senderFormData.Body });
             Console.Write("sendEmail");
     }
 }

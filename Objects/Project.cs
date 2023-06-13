@@ -1,4 +1,4 @@
-class Project
+public class Project
 {
     public string Name { get; }
     public string[] DescriptionParagraphs { get; }

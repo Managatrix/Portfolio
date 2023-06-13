@@ -9,7 +9,7 @@ div.blue-stripe {
     height: 200px;
     width: 100%;
     margin-top: 120px;
-    margin-bottom: 210px;
+    margin-bottom: 200px;
 }
 
 div.indigo-stripe {
@@ -18,8 +18,32 @@ div.indigo-stripe {
     height: 1100px;
     width: 100%;
     margin-top: 200px;
-    /* margin-bottom: 210px; */
+    margin-bottom: 170px;
 }
+
+/* div.gray-stripe {
+    background-color: #f9fafc;
+    transform: skewY(348deg);
+    height: 300px;
+    width: 100%;
+    position: relative;
+    top: -210px;
+    margin-top: 350px;
+} */
+
+/* div.gray-stripe::after {
+    background: black;
+    bottom: -300px;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(12deg);
+    transform-origin: 100%;
+    z-index: -1;
+} */
 
 html,
 body {

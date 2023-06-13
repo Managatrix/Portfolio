@@ -1,6 +1,6 @@
 @inject HttpClient Http
 
-<MudContainer id="myprojects" Style="scroll-margin-top: 11rem;">
+<MudContainer id="myprojects" Style="scroll-margin-top: 6rem;">
     <MudStack Row="true" Spacing="16">
         <MudPaper Elevation="0" Width="44rem">
             <MudStack AlignItems="AlignItems.Start">
@@ -18,10 +18,7 @@
                             <MudSelectItem Value="@project"></MudSelectItem>
                         }
                     </MudSelect>
-                    @foreach (string description in @selectedProject.DescriptionParagraphs)
-                    {
-                        <MudText Typo="Typo.subtitle1">@((MarkupString)description)</MudText>
-                    }
+                    <MudText Typo="Typo.subtitle1">@((MarkupString)@selectedProject.Description)</MudText>
                 }
             </MudStack>
             <MudStack AlignItems="AlignItems.Center" class="mt-16">
@@ -31,11 +28,16 @@
             }
             else
             {
-
-                <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
-                    StartIcon="@Icons.Custom.Brands.GitHub">
-                    Source Code
-                </MudButton>
+                if (@selectedProject?.GithubLink == "")
+                {
+                    <MudPaper Width="160px" Height="40px" Elevation="0"></MudPaper>
+                }
+                else{
+                    <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
+                        StartIcon="@Icons.Custom.Brands.GitHub">
+                        Source Code
+                    </MudButton>
+                }   
             }
             </MudStack>
         </MudPaper>
@@ -45,7 +47,7 @@
         }
         else
         {
-            <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg" Width="350"
+            <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg my-auto" Width="350"
                 Height="600" />
         }
     </MudStack>

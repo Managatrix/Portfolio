@@ -1,20 +1,8 @@
 [
     {
         "Name": "iZiBadge",
-        "DescriptionParagraphs": [
-            "A complete and secure solution through a Flutter mobile app front-end which handles the creation of events for hosts, as well as for guests to show their entry ticket. Even though it relies on an online Firebase database, our solution still works perfectly offline. In this case, it relies on cached data, as well as Bluetooth communication between devices to keep their local databases synchronized.",
-            "Leading a team of 3 students including myself, we designed and developed this app for a school project. We extensively used Git to collaborate as well as using software engineering methods such as use case scenarios and creating interface mockups on Figma."
-        ],
+        "Description": "<p>A complete and secure <strong>event management solution</strong> for hosts and guests using <strong>Flutter</strong>. The solution works both online and offline, thanks to its reliance on a <strong>Firebase </strong>database, <strong>cached data</strong>, and <strong>Bluetooth </strong>communication between devices. As a team of three students, we used <strong>Git </strong>for collaboration and software engineering methods such as <strong>use case scenarios</strong> and <strong>Figma mockups</strong>.</p><p><strong>Event creation:&nbsp;</strong>Hosts can create events with a variety of details. They&nbsp;generate and send unique <strong>QR codes</strong> for each guest.</p><p><strong>Guest management:</strong>&nbsp;When guests arrive at the event, they can show their QR code to the <strong>host or a volunteer&nbsp;</strong>for entry.</p><p><strong>Offline support:</strong>&nbsp;The app works even when there is no internet connection. In this case, it relies on<strong> cached data</strong> and <strong>Bluetooth </strong>communication to keep the <strong>local databases synchronized</strong>.</p><p><strong>Event security:</strong>&nbsp;The local databases are synchronized, and&nbsp;every entry and exit is monitored. This ensures that no ticket can be used multiple times.</p>",
         "ImagePath": "images/izibadge1.png",
         "GithubLink": "https://github.com/BachENSIM/iZiBadge"
-    },
-    {
-        "Name": "24h du Code",
-        "DescriptionParagraphs": [
-            "24-hour coding hackathon, leading a team to design and develop a winning game utilizing ArUco markers and connected light sources.",
-            "Developed in Python with OpenCV library."
-        ],
-        "ImagePath": "images/code24h.jpg",
-        "GithubLink": ""
     }
 ]

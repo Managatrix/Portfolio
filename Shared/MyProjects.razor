@@ -20,7 +20,7 @@
                     </MudSelect>
                     @foreach (string description in @selectedProject.DescriptionParagraphs)
                     {
-                        <MudText Typo="Typo.subtitle1">@description</MudText>
+                        <MudText Typo="Typo.subtitle1">@((MarkupString)description)</MudText>
                     }
                 }
             </MudStack>

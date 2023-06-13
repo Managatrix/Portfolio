@@ -5,64 +5,74 @@
         <MudPaper Elevation="0" Width="44rem">
             <MudStack AlignItems="AlignItems.Start">
                 <MudText Typo="Typo.h4">My Projects</MudText>
-                <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter">
-                    @foreach (Project project in myProjects)
-                    {
-                        <MudSelectItem Value="@project"></MudSelectItem>
-                    }
-                </MudSelect>
-                @foreach (string description in @selectedProject.DescriptionParagraphs)
+                @if (myProjects?.Any() != true)
                 {
-                    <MudText Typo="Typo.subtitle1">@description</MudText>
+                    <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="720px" Height="410px" />
+                }
+                else
+                {
+                    <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined"
+                        AnchorOrigin="Origin.BottomCenter">
+                        @foreach (Project project in myProjects)
+                        {
+                            <MudSelectItem Value="@project"></MudSelectItem>
+                        }
+                    </MudSelect>
+                    @foreach (string description in @selectedProject.DescriptionParagraphs)
+                    {
+                        <MudText Typo="Typo.subtitle1">@description</MudText>
+                    }
                 }
             </MudStack>
             <MudStack AlignItems="AlignItems.Center" class="mt-16">
-                <MudButton Href="@selectedProject.GithubLink" Target="_blank" Variant="Variant.Outlined" StartIcon="@Icons.Custom.Brands.GitHub">
-                Source Code
+            @if (myProjects?.Any() != true)
+            {
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="160px" Height="40px" />
+            }
+            else
+            {
+
+                <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
+                    StartIcon="@Icons.Custom.Brands.GitHub">
+                    Source Code
                 </MudButton>
-                <MudStack Row="true">
-                    @* <MudButton OnClick="serialize">Serialize</MudButton>*@
-                </MudStack>
+            }
             </MudStack>
         </MudPaper>
-        <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg" Width="350" Height="600" />
+        @if (selectedProject is null)
+        {
+            <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="350px" Height="600px" />
+        }
+        else
+        {
+            <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg" Width="350"
+                Height="600" />
+        }
     </MudStack>
 </MudContainer>
 
 @code {
-    static Project izibadge = new Project(
-        "iZiBadge",
-        "izibadge1.png",
-        "https://github.com/BachENSIM/iZiBadge",
-        "A complete and secure solution through a Flutter mobile app front-end which handles the creation of events for hosts, as well as for guests to show their entry ticket. Even though it relies on an online Firebase database, our solution still works perfectly offline. In this case, it relies on cached data, as well as Bluetooth communication between devices to keep their local databases synchronized.",
-        "Leading a team of 3 students including myself, we designed and developed this app for a school project. We extensively used Git to collaborate as well as using software engineering methods such as use case scenarios and creating interface mockups on Figma."
-        );
-    static Project hackathon24h = new Project(
-        "24h du Code",
-        "code24h.jpg",
-        "",
-        "24-hour coding hackathon, leading a team to design and develop a winning game utilizing ArUco markers and connected light sources.",
-        "Developed in Python with OpenCV library."
-        );
-    static Project[] myProjects = {izibadge, hackathon24h};
-    static Project selectedProject = myProjects[0];
+    List<Project>? myProjects = new();
+    Project selectedProject = new Project();
 
     Converter<Project> projectConverter = new Converter<Project>
-    {
-        SetFunc = value => value.Name,
-        //GetFunc = text => izibadge,
-    };
+        {
+            SetFunc = value => value.Name,
+            //GetFunc = text => "",
+        };
 
-    void serialize(){
+    void serialize()
+    {
         string jsonString = JsonSerializer.Serialize(myProjects);
+        Console.WriteLine("Serialized:");
         Console.WriteLine(jsonString);
     }
-    /*protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
-        string fileName = "data/projects.json";
-        string jsonString = await Http.GetStringAsync(fileName);
-        Console.WriteLine(jsonString);
-        Project[]? projects = JsonSerializer.Deserialize<Project[]>(jsonString);
-        myProjects = projects;
-    }*/
+        string jsonProjects = await Http.GetStringAsync("data/projects.json");
+        Console.WriteLine("Deserialized:");
+        Console.WriteLine(jsonProjects);
+        myProjects = JsonSerializer.Deserialize<List<Project>>(jsonProjects);
+        selectedProject = myProjects.ElementAt(0);
+    }
 }

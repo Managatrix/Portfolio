@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "iZiBadge",
+        "DescriptionParagraphs": [
+            "A complete and secure solution through a Flutter mobile app front-end which handles the creation of events for hosts, as well as for guests to show their entry ticket. Even though it relies on an online Firebase database, our solution still works perfectly offline. In this case, it relies on cached data, as well as Bluetooth communication between devices to keep their local databases synchronized.",
+            "Leading a team of 3 students including myself, we designed and developed this app for a school project. We extensively used Git to collaborate as well as using software engineering methods such as use case scenarios and creating interface mockups on Figma."
+        ],
+        "ImagePath": "images/izibadge1.png",
+        "GithubLink": "https://github.com/BachENSIM/iZiBadge"
+    },
+    {
+        "Name": "24h du Code",
+        "DescriptionParagraphs": [
+            "24-hour coding hackathon, leading a team to design and develop a winning game utilizing ArUco markers and connected light sources.",
+            "Developed in Python with OpenCV library."
+        ],
+        "ImagePath": "images/code24h.jpg",
+        "GithubLink": ""
+    }
+]

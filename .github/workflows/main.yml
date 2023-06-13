@@ -21,6 +21,9 @@ jobs:
       with:
         html_path: ${{ env.PUBLISH_DIR }}/index.html
         base_href: /Portfolio/
+    
+    - name: Add necessary additional file
+      run: touch .nojekyll
 
     - name: GitHub Pages
       if: success()

@@ -1,9 +1,9 @@
 <div id="about" style="scroll-margin-top: -19rem;" class="indigo-stripe">
-    <MudContainer Style="transform: skewY(12deg); position: relative; top: 200px; color: #adbdcc;">
+    <MudContainer Style="transform: skewY(12deg); position: relative; color: #adbdcc;">
         <MudStack Spacing="8">
             <MudText Typo="Typo.h4" Style="color: white;">About me</MudText>
-            <MudGrid Spacing="10">
-                <MudItem xs="6">
+            <MudGrid Spacing="10" class="justify-center">
+                <MudItem xs="12" md="6">
                     <MudStack>
                         <MudText Typo="Typo.subtitle1">My name is Thomas Féray-Desgranges, but please, call me
                             <b>Tom</b>!
@@ -16,11 +16,25 @@
                         </MudText>
                     </MudStack>
                 </MudItem>
-                <MudItem xs="6">
+                <MudItem xs="10" md="6">
                     <MudImage Src="images/polarsteps.png" Alt="Mexico Roadtrip" Class="rounded-lg" Fluid="true"
                         Elevation="8" />
                 </MudItem>
-                <MudItem xs="6">
+
+                <MudItem xs="12" md="6" class="order-md-4">
+                    <MudStack>
+                        <MudStack Row="true">
+                            <MudIcon Icon="@Icons.Material.Filled.PhotoCameraBack" Size="Size.Large" />
+                            <MudIcon Icon="@Icons.Material.Filled.Explore" Size="Size.Large" />
+                        </MudStack>
+                        <MudText Typo="Typo.subtitle1">
+                            My favorite hobbies include <b>traveling</b> and taking <b>pictures</b> (mostly
+                            <b>timelapses</b>) everywhere I go. And what better experience than to arrive in the US
+                            doing a 2 months solo road trip through Mexico and the United States!
+                        </MudText>
+                    </MudStack>
+                </MudItem>
+                <MudItem xs="12" md="6" class="order-md-3">
                     <MudStack>
                         <MudStack Row="true">
                             <MudIcon Icon="@Icons.Material.Filled.School" Size="Size.Large" />
@@ -31,19 +45,6 @@
                             France, I wasn't sure what wanted to do, so I decided to pursue studies in <b>Science</b>
                             for a 2 year degree. I then realized that I wanted to become a software developer which led
                             me to ENSIM, to prepare a Master's Degree in <b>Computer Science</b>.
-                        </MudText>
-                    </MudStack>
-                </MudItem>
-                <MudItem xs="6">
-                    <MudStack>
-                        <MudStack Row="true">
-                            <MudIcon Icon="@Icons.Material.Filled.PhotoCameraBack" Size="Size.Large" />
-                            <MudIcon Icon="@Icons.Material.Filled.Explore" Size="Size.Large" />
-                        </MudStack>
-                        <MudText Typo="Typo.subtitle1">
-                            My favorite hobbies include <b>traveling</b> and taking <b>pictures</b> (mostly
-                            <b>timelapses</b>) everywhere I go. And what better experience than to arrive in the US
-                            doing a 2 months solo road trip through Mexico and the United States!
                         </MudText>
                     </MudStack>
                 </MudItem>

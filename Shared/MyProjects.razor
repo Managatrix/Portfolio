@@ -1,55 +1,65 @@
 @inject HttpClient Http
 
 <MudContainer id="myprojects" Style="scroll-margin-top: 6rem;">
-    <MudStack Row="true" Spacing="16">
-        <MudPaper Elevation="0" Width="44rem">
-            <MudStack AlignItems="AlignItems.Start">
-                <MudText Typo="Typo.h4">My Projects</MudText>
-                @if (myProjects?.Any() != true)
-                {
-                    <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="720px" Height="410px" />
-                }
-                else
-                {
-                    <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined"
-                        AnchorOrigin="Origin.BottomCenter">
-                        @foreach (Project project in myProjects)
-                        {
-                            <MudSelectItem Value="@project"></MudSelectItem>
-                        }
-                    </MudSelect>
-                    <MudText Typo="Typo.subtitle1">@((MarkupString)@selectedProject.Description)</MudText>
-                }
-            </MudStack>
-            <MudStack AlignItems="AlignItems.Center" class="mt-16">
-            @if (myProjects?.Any() != true)
-            {
-                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="160px" Height="40px" />
-            }
-            else
-            {
-                if (@selectedProject?.GithubLink == "")
-                {
-                    <MudPaper Width="160px" Height="40px" Elevation="0"></MudPaper>
-                }
-                else{
-                    <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
-                        StartIcon="@Icons.Custom.Brands.GitHub">
-                        Source Code
-                    </MudButton>
-                }   
-            }
-            </MudStack>
-        </MudPaper>
-        @if (selectedProject is null)
+    <MudStack AlignItems="AlignItems.Start">
+        <MudText Typo="Typo.h4">My Projects</MudText>
+        @if (myProjects?.Any() != true)
         {
-            <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="350px" Height="600px" />
+            <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="250px" Height="60px" />
         }
         else
         {
-            <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8" class="rounded-lg my-auto" Width="350"
-                Height="600" />
+            <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined"
+                AnchorOrigin="Origin.BottomCenter">
+                @foreach (Project project in myProjects)
+                {
+                    <MudSelectItem Value="@project"></MudSelectItem>
+                }
+            </MudSelect>
         }
+        <MudGrid Spacing="10">
+            <MudItem sm="5" xs="12" class="d-flex justify-center order-sm-2">
+                @if (selectedProject is null)
+                {
+                    <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="350px" Height="600px" />
+                }
+                else
+                {
+                    <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8"
+                        class="rounded-lg my-auto" Width="350" Height="600" />
+                }
+            </MudItem>
+            <MudItem sm="7" xs="12" Class="order-sm-1">
+                @if (myProjects?.Any() != true)
+                {
+                    <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="700px" Height="500px" />
+                }
+                else
+                {
+                    <MudText Typo="Typo.subtitle1">@((MarkupString)@selectedProject.Description)</MudText>
+                }
+                <MudStack AlignItems="AlignItems.Center" class="mt-16">
+                    @if (myProjects?.Any() != true)
+                    {
+                        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="160px" Height="40px" />
+                    }
+                    else
+                    {
+                        if (@selectedProject?.GithubLink == "")
+                        {
+                            <MudPaper Width="160px" Height="40px" Elevation="0"></MudPaper>
+                        }
+                        else
+                        {
+                            <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
+                                StartIcon="@Icons.Custom.Brands.GitHub">
+                                Source Code
+                            </MudButton>
+                        }
+                    }
+                </MudStack>
+            </MudItem>
+        </MudGrid>
     </MudStack>
 </MudContainer>
 
@@ -62,18 +72,9 @@
             SetFunc = value => value.Name,
             //GetFunc = text => "",
         };
-
-    void serialize()
-    {
-        string jsonString = JsonSerializer.Serialize(myProjects);
-        Console.WriteLine("Serialized:");
-        Console.WriteLine(jsonString);
-    }
     protected override async Task OnInitializedAsync()
     {
         string jsonProjects = await Http.GetStringAsync("data/projects.json");
-        Console.WriteLine("Deserialized:");
-        Console.WriteLine(jsonProjects);
         myProjects = JsonSerializer.Deserialize<List<Project>>(jsonProjects);
         selectedProject = myProjects.ElementAt(0);
     }

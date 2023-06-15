@@ -9,13 +9,17 @@
         }
         else
         {
-            <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined"
-                AnchorOrigin="Origin.BottomCenter">
-                @foreach (Project project in myProjects)
-                {
-                    <MudSelectItem Value="@project"></MudSelectItem>
-                }
-            </MudSelect>
+            <MudPaper Width="250px" Elevation="0">
+                <MudSelect Converter="@projectConverter" @bind-Value="@selectedProject" Variant="Variant.Outlined"
+                    AnchorOrigin="Origin.BottomCenter" FullWidth="true">
+                    @foreach (Project project in myProjects)
+                    {
+                        <MudSelectItem Value="@project"><img src="@project.Icon" height="18" class="mr-1" />
+                            @project.Name
+                        </MudSelectItem>
+                    }
+                </MudSelect>
+            </MudPaper>
         }
         <MudGrid Spacing="10">
             <MudItem sm="5" xs="12" class="d-flex justify-center order-sm-2">
@@ -26,7 +30,7 @@
                 else
                 {
                     <MudImage Src="@selectedProject.ImagePath" Alt="@selectedProject.Name" Elevation="8"
-                        class="rounded-lg my-auto" Width="350" Height="600" />
+                        class="rounded-lg my-auto" Width="337" Height="600" ObjectFit="ObjectFit.Cover" />
                 }
             </MudItem>
             <MudItem sm="7" xs="12" Class="order-sm-1">

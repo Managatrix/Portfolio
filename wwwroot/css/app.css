@@ -26,6 +26,12 @@ div.indigo-stripe {
     padding-bottom: 100px;
 }
 
+.mud-gradient {
+    background: linear-gradient(82deg, #594ae2 0%, #f69 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 600px) {
     div.indigo-stripe {
         margin-top: 80px;

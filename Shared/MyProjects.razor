@@ -49,17 +49,10 @@
                     }
                     else
                     {
-                        if (@selectedProject?.GithubLink == "")
-                        {
-                            <MudPaper Width="160px" Height="40px" Elevation="0"></MudPaper>
-                        }
-                        else
-                        {
-                            <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
-                                StartIcon="@Icons.Custom.Brands.GitHub">
-                                Source Code
-                            </MudButton>
-                        }
+                        <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
+                            StartIcon="@Icons.Custom.Brands.GitHub" Disabled="@selectedProject.NoSourceCodeLink">
+                            Source Code
+                        </MudButton>
                     }
                 </MudStack>
             </MudItem>

@@ -7,6 +7,7 @@ public class Project
     public string Description { get; set; }
     public string ImagePath { get; set; }
     public string GithubLink { get; set; }
+    public bool NoSourceCodeLink { get; set; }
 
     [JsonConstructor]
     public Project(string name, string icon, string imagePath, string githubLink, string description)
@@ -16,6 +17,7 @@ public class Project
         ImagePath = imagePath;
         GithubLink = githubLink;
         Description = description;
+        NoSourceCodeLink = (GithubLink == "") ? true : false;
     }
     public Project()
     {
@@ -24,5 +26,6 @@ public class Project
         ImagePath = "";
         GithubLink = "";
         Description = "";
+        NoSourceCodeLink = true;
     }
 }

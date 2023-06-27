@@ -1,8 +1,4 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
---mud-typography-default-family {
-    font-family: Public Sans;
-}
-
 div.blue-stripe {
     background: linear-gradient(82deg, #594ae2 0%, #7467ef 100%);
     transform: skewY(348deg);

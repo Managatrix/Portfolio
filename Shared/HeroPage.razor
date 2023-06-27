@@ -1,21 +1,27 @@
 <MudContainer class="mt-16 pt-md-16">
     <MudGrid Spacing="10">
         <MudItem md="7" xs="12">
-            <MudStack Spacing="4">
+            <MudStack Spacing="4" class="align-items-center align-items-md-start">
                 <MudStack Spacing="0">
-                    <MudText Typo="Typo.h2" Align="Align.Center">Hi, I'm Tom</MudText>
-                    <MudText Typo="Typo.h2" Align="Align.Center">Jr. <span class="mud-gradient">
-                            Software Developer</span></MudText>
+                    <MudText Typo="Typo.h1">Hi, I'm Tom</MudText>
+                    <MudText Typo="Typo.h1">
+                        Jr.<span class="mud-gradient"> Software Developer</span></MudText>
                 </MudStack>
-                <MudText Typo="Typo.subtitle1" Align="Align.Center">
-                    <p>Graduating Master&#39;s Degree Computer Science student seeking both internship and full-time
-                        opportunities. Foundations in various programming languages (<strong>Java</strong>,
+                <MudText Typo="Typo.subtitle1" class="mud-text-secondary">
+                    <p>Graduating <strong>Computer Science Master's Degree</strong> student seeking both internship and
+                        full-time opportunities. Foundations in various programming languages (<strong>Java</strong>,
                         <strong>C#</strong>, <strong>Javascript</strong>, <strong>Python</strong>), frameworks
                         (<strong>Spring Boot</strong>, <strong>Blazor</strong>, <strong>Flutter</strong>,
                         <strong>Ionic</strong>), and platforms (<strong>VS Code</strong>, <strong>Jupyter</strong>,
                         <strong>Figma</strong>) in several IT domains such as web, mobile, desktop, and artificial
-                        intelligence.</p>
+                        intelligence.
+                    </p>
                 </MudText>
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Custom.FileFormats.FilePdf" Color="Color.Primary"
+                    Size="Size.Large" DisableElevation="true" Link="data/resume.pdf" Target="_blank"
+                    Style="text-transform:none; background-image: linear-gradient(82deg,#594ae2 0%,#7467ef 100%,#594ae2 200%);">
+                    Read my Resume
+                </MudButton>
             </MudStack>
         </MudItem>
         <MudItem md="5" xs="12" class="d-flex justify-center">

@@ -40,7 +40,8 @@
                 }
                 else
                 {
-                    <MudText Typo="Typo.subtitle1">@((MarkupString)@selectedProject.Description)</MudText>
+                    <MudText Typo="Typo.subtitle1" class="mud-text-secondary">@((MarkupString)@selectedProject.Description)
+                    </MudText>
                 }
                 <MudStack AlignItems="AlignItems.Center" class="mt-16">
                     @if (myProjects?.Any() != true)
@@ -50,7 +51,8 @@
                     else
                     {
                         <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
-                            StartIcon="@Icons.Custom.Brands.GitHub" Disabled="@selectedProject.NoSourceCodeLink">
+                            StartIcon="@Icons.Custom.Brands.GitHub" Disabled="@selectedProject.NoSourceCodeLink"
+                            Style="text-transform:none;" Size="Size.Large">
                             Source Code
                         </MudButton>
                     }

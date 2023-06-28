@@ -50,11 +50,14 @@
                     }
                     else
                     {
-                        <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
-                            StartIcon="@Icons.Custom.Brands.GitHub" Disabled="@selectedProject.NoSourceCodeLink"
-                            Style="text-transform:none;" Size="Size.Large">
-                            Source Code
-                        </MudButton>
+                        <MudTooltip Text="Source code not available" Duration="1000"
+                            ShowOnHover="@selectedProject.NoSourceCodeLink" ShowOnFocus="@selectedProject.NoSourceCodeLink">
+                            <MudButton Href="@selectedProject?.GithubLink" Target="_blank" Variant="Variant.Outlined"
+                                StartIcon="@Icons.Custom.Brands.GitHub" Disabled="@selectedProject.NoSourceCodeLink"
+                                Style="text-transform:none;" Size="Size.Large">
+                                Source Code
+                            </MudButton>
+                        </MudTooltip>
                     }
                 </MudStack>
             </MudItem>

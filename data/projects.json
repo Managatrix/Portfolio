@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "iZiBadge",
+        "Icon": "images/flutter-icon.png",
+        "Description": "<p>A complete and secure <strong class=\"mud-gradient\">event management solution</strong> for hosts and guests using <strong>Flutter</strong>. The solution works both online and offline, thanks to its reliance on a <strong>Firebase </strong>database, <strong>cached data</strong>, and <strong>Bluetooth </strong>communication between devices. As a team of three students, we used <strong>Git </strong>for collaboration and software engineering methods such as <strong>use case scenarios</strong> and <strong>Figma mockups</strong>.</p><p><strong>Event creation:&nbsp;</strong>Hosts can create events with a variety of details. They&nbsp;generate and send unique <strong>QR codes</strong> for each guest.</p><p><strong>Guest management:</strong>&nbsp;When guests arrive at the event, they can show their QR code to the <strong>host or a volunteer&nbsp;</strong>for entry.</p><p><strong>Offline support:</strong>&nbsp;The app works even when there is no internet connection. In this case, it relies on<strong> cached data</strong> and <strong>Bluetooth </strong>communication to keep the <strong>local databases synchronized</strong>.</p><p><strong>Event security:</strong>&nbsp;The local databases are synchronized, and&nbsp;every entry and exit is monitored. This ensures that no ticket can be used multiple times.</p>",
+        "ImagePath": "images/izibadge1.png",
+        "GithubLink": "https://github.com/BachENSIM/iZiBadge"
+    },
+    {
+        "Name": "24-hour Hackathon",
+        "Icon": "images/python-icon.png",
+        "Description": "<p>A fun and creative <strong class=\"mud-gradient\">game </strong>interacting with <strong>real-life objects</strong> (ArUco markers and connected light sources). This project was developed during a 24-hour hackathon and led us to win the <strong>first prize</strong>.</p><p>Key steps include:</p><p>1. Capturing and analyzing a <strong>real-time video feed</strong> using <strong>OpenCV</strong>.</p><p>2. Detecting and locating the <strong>position </strong>of <strong>ArUco markers</strong>.</p><p>3. Operating the <strong>connected lamps</strong>.</p><p>4. Imagining&nbsp;creative <strong>gameplay</strong>.</p><p>The gameplay is simple yet engaging. The player places an ArUco marker on the table and needs to find the randomly chosen position on the table to win the game. To help them, the lights in the room turn from red to green as the player moves the marker toward the final position. The player wins the game when the green lights are at their brightest.</p>",
+        "ImagePath": "images/code24h.webp",
+        "GithubLink": ""
+    },
+    {
+        "Name": "Music Streaming App",
+        "Icon": "images/kotlin-icon.png",
+        "Description": "<p>A simple <strong class=\"mud-gradient\">music streaming app</strong> that uses an existing streaming <strong>API </strong>to provide all the content. I developed two versions of the app, utilizing different technologies for specific platforms. One version was built with <strong>Ionic </strong>and <strong>TypeScript</strong>, while the other was built with&nbsp;<strong>Kotlin </strong>through <strong>Android Studio</strong>.</p><p><strong>Music streaming:</strong> Users can search and browse for an artist, album and choose a song to listen to.</p><p><strong>Platform compatibility:</strong> The <strong>Ionic </strong>version of the app was developed to run on multiple platforms, including <strong>iOS</strong>, <strong>Android</strong>, and <strong>web browsers</strong>. The <strong>Kotlin </strong>version, on the other hand, was tailored specifically to run natively on&nbsp;<strong>Android </strong>devices.</p>",
+        "ImagePath": "images/deezer-streaming.png",
+        "GithubLink": ""
+    }
+]
